@@ -9,22 +9,30 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "program.hpp"
+#include "buffer.hpp"
 
 class Renderer
 {
 private:
-    void printProgramLog(GLuint program);
-    void printShaderLog(GLuint shader);
-
+    Program *program = NULL;
+    std::vector<Buffer*> buffers;
 public:
-    GLuint program = 0;
-    std::vector<GLuint> buffers; 
-    void (* renderFunction)(Renderer *);
+    
+    //GETTERS--------------------------------------------
+    Program* getProgram(){return this->program;};
+
+    void appendBuffer(Buffer *buffer){this->buffers.push_back(buffer);};
+
+    /* TODO:add a render function */
+    void render(){
+        
+    };
+    
     
     Renderer(std::string vshaderSource, std::string fshaderSource);
     ~Renderer();
 
-    void render(){this->renderFunction(this);};
 };
 
 #endif
