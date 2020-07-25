@@ -30,7 +30,7 @@ void Buffer::enableVertexAttr(){
 void Buffer::bindToVertexAttr(){
     this->enableVertexAttr();
     this->bind();
-    glVertexAttribPointer( this->location_, this->frameSize_, this->type_, this->normailized_, this->stride_ * this->typeSize_, NULL );
+    glVertexAttribPointer( this->location_, this->frameSize_, this->type_, this->normailized_, this->stride_, NULL );
 }
 
 

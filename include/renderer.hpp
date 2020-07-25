@@ -25,11 +25,12 @@ public:
 
     void appendVBuffer(Buffer *vbuffer){this->vbuffers.push_back(vbuffer);};
     void appendDEBuffer(Buffer *debuffer){this->debuffers.push_back(debuffer);};
-    /* TODO:add a render function */
+
     void render(){
         program->bind();
         for (auto vb : vbuffers)
         {
+            vb->bind();
             vb->enableVertexAttr();
         }
         for(auto deb:debuffers){
@@ -38,7 +39,6 @@ public:
         }
         program->unbind();
     };
-    
     
     Renderer(std::string vshaderSource, std::string fshaderSource);
     ~Renderer();

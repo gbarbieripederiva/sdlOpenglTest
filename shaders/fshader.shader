@@ -1,6 +1,9 @@
 #version 300 es
 precision mediump float;
-out vec4 LFragment;
+
+in vec4 my_fcolor;
+
+out vec4 my_fragment;
 void main() {
-    LFragment = vec4( 1.0, 1.0, 1.0, 1.0 ); 
+    my_fragment = my_fcolor; 
 }

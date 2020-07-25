@@ -1,5 +1,9 @@
 #ifndef __APPLICATION__
 #define __APPLICATION__
+
+// if this is not commented application is in debug state
+#define __APPLICATION_DEBUG__
+
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
@@ -19,7 +23,7 @@ private:
     void (*startedCallback)(Application*) = NULL;
     void (*mainLoopCallback)(Application*) = NULL;
     std::string title;
-    std::vector<Renderer> renderVector;
+    std::vector<Renderer*> renderVector;
 
 
 
@@ -39,7 +43,7 @@ public:
 
 
     //renderers function
-    int appendRenderer(Renderer renderer){this->renderVector.push_back(renderer);return this->renderVector.size()-1;};
+    int appendRenderer(Renderer *renderer){this->renderVector.push_back(renderer);return this->renderVector.size()-1;};
 
     //some simple setters
     void setHandleEvent(void (*eventHandler)(SDL_Event *,Application*)){this->handleEvent = eventHandler;};
