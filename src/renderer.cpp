@@ -8,6 +8,17 @@ Renderer::Renderer(std::string vshaderSource, std::string fshaderSource)
 Renderer::~Renderer()
 {
     delete this->program;
+    for(auto a:this->vbuffers){
+        if(a->shouldBeDeallocated()){
+            delete a;
+        }
+    }
+    for(auto a:this->debuffers){
+        if (a->shouldBeDeallocated())
+        {
+            delete a;
+        }
+    }
 }
 
 

@@ -21,7 +21,6 @@ Program::Program(std::string vshaderSource, std::string fshaderSource){
     glGetShaderiv(vshader, GL_COMPILE_STATUS, &vShaderCompiled);
     if (vShaderCompiled != GL_TRUE)
     {
-        //TODO: output compile error
         printf("Unable to compile vertex shader %d!\n", vshader);
         this->printShaderLog(vshader);
         glDeleteShader(vshader);
@@ -45,7 +44,6 @@ Program::Program(std::string vshaderSource, std::string fshaderSource){
     glGetShaderiv(fshader, GL_COMPILE_STATUS, &fShaderCompiled);
     if (fShaderCompiled != GL_TRUE)
     {
-        //TODO: output compile error
         printf("Unable to compile fragment shader %d!\n", fshader);
         this->printShaderLog(fshader);
         glDeleteShader(vshader);
@@ -65,7 +63,6 @@ Program::Program(std::string vshaderSource, std::string fshaderSource){
 
     if (programSuccess != GL_TRUE)
     {
-        //TODO: output link error
         printf("Error linking program %d!\n", this->program);
         this->printProgramLog(this->program);
         glDeleteShader(vshader);

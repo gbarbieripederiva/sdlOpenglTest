@@ -29,6 +29,7 @@ private:
     GLenum mode_;
 
     DeallocFunc deallocFunc_ = NULL;
+    bool shouldBeDeallocated_ = false;
 public:
     Buffer();
     ~Buffer();
@@ -50,6 +51,9 @@ public:
     */
     void drawElements();
 
+    /* requires location */
+    void enableVertexAttr();
+
 
     //GETTERS-----------------------------------------------------------
     GLuint location() { return this->location_; };
@@ -65,6 +69,7 @@ public:
     GLint frameSize() { return this->frameSize_; };
     GLenum mode(){return this->mode_;};
     DeallocFunc deallocFunc(){return this->deallocFunc_;};
+    bool shouldBeDeallocated(){return this->shouldBeDeallocated_;};
     
     //UTILITY------------------------------------------------------------
     /* requires program be bound */
@@ -83,6 +88,7 @@ public:
     void frameSize(GLint frameSize) { this->frameSize_ = frameSize; };
     void mode(GLenum mode){this->mode_ = mode;};
     void deallocFunc(DeallocFunc deallocFunc){this->deallocFunc_ = deallocFunc;};
+    void shouldBeDeallocated(bool shouldBeDeallocated){this->shouldBeDeallocated_ = shouldBeDeallocated;};
 };
 
 #endif

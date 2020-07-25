@@ -22,13 +22,14 @@ void Buffer::initData(){
     glBufferData(this->target_,this->size_,this->data_,this->usage_);
 }
 
+void Buffer::enableVertexAttr(){
+    glEnableVertexAttribArray(this->location_);
+}
+
 //TODO:check last parameter
 void Buffer::bindToVertexAttr(){
-    //Enable vertex position
-    glEnableVertexAttribArray( this->location_ );
-
-    //Set vertex data
-    glBindBuffer( this->target_, this->buffer_ );
+    this->enableVertexAttr();
+    this->bind();
     glVertexAttribPointer( this->location_, this->frameSize_, this->type_, this->normailized_, this->stride_ * this->typeSize_, NULL );
 }
 
