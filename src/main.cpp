@@ -42,24 +42,10 @@ int main(int argc, char const *argv[])
     app.setTitle("Hello world");
     app.setHandleEvent((void (*)(SDL_Event *, Application *))eventHandler);
     app.setStartedCallback([](Application *app){
-        
-        //create Renderer
-        std::fstream shaderFile;
-        shaderFile.open("./shaders/vshader.shader");
-        std::stringstream vshaderSource;
-        // review performance loss https://stackoverflow.com/questions/2602013/read-whole-ascii-file-into-c-stdstring
-        vshaderSource<<shaderFile.rdbuf();
-        shaderFile.close();
-        shaderFile.clear();
-
-        shaderFile.open("./shaders/fshader.shader");
-        std::stringstream fshaderSource;
-        fshaderSource<<shaderFile.rdbuf();
-        shaderFile.close();
-        shaderFile.clear();
         Renderer *renderer = new Renderer(
-            vshaderSource.str(),
-            fshaderSource.str()
+            "./shaders/vshader.shader",
+            "./shaders/fshader.shader",
+            true
         );
 
         //create vertex data buffer

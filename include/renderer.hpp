@@ -9,6 +9,8 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <sstream>
 #include "program.hpp"
 #include "buffer.hpp"
 
@@ -39,8 +41,8 @@ public:
         }
         program->unbind();
     };
-    
     Renderer(std::string vshaderSource, std::string fshaderSource);
+    Renderer(std::string vshaderSource, std::string fshaderSource,bool isFile);
     ~Renderer();
 
 };
