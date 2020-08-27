@@ -11,6 +11,8 @@
 #include <string>
 #include <sstream>
 
+// https://github.com/Tencent/rapidjson
+#include <rapidjson/document.h>
 
 void eventHandler(SDL_Event &e, Application &app)
 {
