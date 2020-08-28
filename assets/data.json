@@ -1,0 +1,44 @@
+{
+  "my_vpos": {
+    "data": [-0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5],
+    "target": "GL_ARRAY_BUFFER",
+    "framesize": 2,
+    "type": "GL_FLOAT",
+    "stride": 2,
+    "usage": "GL_STATIC_DRAW"
+  },
+  "my_vcolor": {
+    "data": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "target": "GL_ARRAY_BUFFER",
+    "framesize": 2,
+    "type": "GL_FLOAT",
+    "stride": 4,
+    "size": 16,
+    "usage": "GL_STATIC_DRAW"
+  },
+  "deBuff": {
+    "data": [0, 1, 2, 3],
+    "target": "GL_ELEMENT_ARRAY_BUFFER",
+    "type": "GL_UNSIGNED_INT",
+    "framesize": 4,
+    "usage": "GL_STATIC_DRAW",
+    "mode": "GL_TRIANGLE_FAN"
+  }
+}

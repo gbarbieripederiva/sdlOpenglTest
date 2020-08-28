@@ -14,6 +14,9 @@
 #include "program.hpp"
 #include "buffer.hpp"
 
+// https://github.com/Tencent/rapidjson
+#include <rapidjson/document.h>
+
 class Renderer
 {
 private:
@@ -27,6 +30,8 @@ public:
 
     void appendVBuffer(Buffer *vbuffer){this->vbuffers.push_back(vbuffer);};
     void appendDEBuffer(Buffer *debuffer){this->debuffers.push_back(debuffer);};
+
+    void readDataJson(std::string path);
 
     void render(){
         program->bind();
